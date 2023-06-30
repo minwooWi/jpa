@@ -10,3 +10,28 @@
 </head>
 <body>
 <h1>head</h1>
+<div class="row">
+    <div class="col-md-6">
+        {{#userName}}
+            Logged in as: <span id="user">{{userName}}</span>
+            <!-- /logout
+                :SpringSecurity에서 기본적으로 제공하는 로그아웃 URL
+                :개발자가 별도로 저 URL에 해당하는 컨트롤러를 만들 필요 없음!
+                :SecurityConfig 클래스에서 URL을 변경할 수 있음
+            -->
+            <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+        {{/userName}}
+        <!-- ^userName
+            :해당 값이 존재하지 않는 경우 ^ 사용
+         -->
+        {{^userName}}
+            <!-- /oauth2/authorization/google
+                :SpringSecurity에서 기본적으로 제공하는 로그인 URL
+                :개발자가 별도로 저 URL에 해당하는 컨트롤러를 만들 필요 없음!
+            -->
+            <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+            <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+        {{/userName}}
+    </div>
+</div>
+<br>
