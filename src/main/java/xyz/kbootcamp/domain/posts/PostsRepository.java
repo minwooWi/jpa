@@ -1,4 +1,4 @@
-package xyz.kbootcamp.domain;
+package xyz.kbootcamp.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
