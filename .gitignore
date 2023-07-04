@@ -36,3 +36,5 @@ out/
 
 ### VS Code ###
 .vscode/
+/src/main/resources/META-INF/additional-spring-configuration-metadata.json
+/deploy.sh
