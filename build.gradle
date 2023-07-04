@@ -37,8 +37,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
     compileOnly 'org.springframework.boot:spring-boot-starter-oauth2-client'
     compileOnly 'org.springframework.session:spring-session-jdbc'
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
+    compileOnly 'org.mariadb.jdbc:mariadb-java-client'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 }
