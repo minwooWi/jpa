@@ -39,3 +39,15 @@ deploy:
     wait-until-deployed: true
     on:
       branch: main
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: kbootcamp-build
+    key: jpa.zip
+    bundle_type: zip
+    application: kbootcamp
+    deployment_group: kbootcamp-group
+    region: ap-northeast-2
+    wait-until-deployed: true
+    on:
+      branch: main
