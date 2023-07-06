@@ -37,7 +37,7 @@ public class SecurityConfig {
                  *  ->"/" 등 지정된 URL들은 permitAll() 옵션을 통해 전체 열람 권한 부여
                  *  ->"/api/v1/**" 주소를 가진 API는 USER 권한을 가진 사람만 가능하도록 설정
                  */
-                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile", "/horseList", "/excel", "/favicon.ico", "/error")
+                .antMatchers("/", "/profile", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile", "/horseList", "/excel", "/favicon.ico", "/error")
                 .permitAll()
                 .antMatchers("/posts/**").hasRole(Role.USER.name())
                 /**
