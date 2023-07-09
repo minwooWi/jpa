@@ -8,7 +8,7 @@ plugins {
 }
 
 group = 'xyz.kbootcamp'
-version = '1.0.1-SNAPSHOT'
+version = '1.0.1-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 
 java {
     sourceCompatibility = '11'
