@@ -39,6 +39,10 @@ dependencies {
     implementation 'org.springframework.session:spring-session-jdbc'
     implementation 'org.mariadb.jdbc:mariadb-java-client'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    implementation 'org.jsoup:jsoup:1.14.3'
+    implementation 'org.apache.poi:poi:5.2.2'                // .xls 확장자
+    implementation 'org.apache.poi:poi-ooxml:5.2.2'          // .xlsx 확장자
 }
 
 jar {
