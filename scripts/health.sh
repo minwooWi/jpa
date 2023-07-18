@@ -17,6 +17,9 @@ do
   RESPONSE=$(curl -s http://localhost:${IDLE_PORT}/profile)
   UP_COUNT=$(echo ${RESPONSE} | grep 'prod' | wc -l) # 영어 소문자 l
 
+  echo "RESPONSE VALUE : ${RESPONSE}"
+  echo "UP_COUNT VALUE : ${RESPONSE}"
+
   if [ ${UP_COUNT} -ge 1 ]
   then # up_count >=1 ("real" 문자열이 있는지 검증 )
     echo "> Health check 성공"
