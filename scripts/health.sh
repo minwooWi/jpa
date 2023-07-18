@@ -15,7 +15,7 @@ sleep 10
 for RETRY_COUNT in {1..10}
 do
   RESPONSE=$(curl -s http://localhost:${IDLE_PORT}/profile)
-  UP_COUNT=$(echo ${RESPONSE} | grep 'real' | wc -l) # 영어 소문자 l
+  UP_COUNT=$(echo ${RESPONSE} | grep 'prod' | wc -l) # 영어 소문자 l
 
   if [ ${UP_COUNT} -ge 1 ]
   then # up_count >=1 ("real" 문자열이 있는지 검증 )
