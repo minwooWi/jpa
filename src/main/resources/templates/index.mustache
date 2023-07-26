@@ -1,63 +1,87 @@
 {{>layout/header}}
-<div class="col-md-12">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">글 등록</button>
-    <br/>
-    <br/>
-
-    <!-- 목록 출력 영역 -->
-    <table class="table table-horizontal table-bordered">
-        <thead class="thead-strong">
-        <tr>
-            <th>게시글번호</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>최종수정일</th>
-        </tr>
-        </thead>
-        <tbody id="tbody">
-        {{#posts}}
-            <tr>
-                <td>{{id}}</td>
-                <td><a href="/posts/update/{{id}}">{{title}}</a></td>
-                <td>{{author}}</td>
-                <td>{{modifiedDate}}</td>
-            </tr>
-        {{/posts}}
-        </tbody>
-    </table>
-</div>
-
-<!-- Modal 영역 -->
-<div class="modal fade" id="savePostsModal" tabindex="-1" role="dialog" aria-labelledby="savePostsLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="savePostsLabel">게시글 등록</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="title">제목</label>
-                        <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
-                    </div>
-                    <div class="form-group">
-                        <label for="author"> 작성자 </label>
-                        <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요">
-                    </div>
-                    <div class="form-group">
-                        <label for="content"> 내용 </label>
-                        <textarea class="form-control" id="content" placeholder="내용을 입력하세요"></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-                <button type="button" class="btn btn-primary" id="btn-save">등록</button>
+<main class="flex-shrink-0">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href="/">Marketing Automation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.mustache">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">공지사항</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">질문답변</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">구매신청</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">프로그램</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">다운로드</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">로그인</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">회원가입</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-</div>
+    </nav>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center justify-content-center">
+                <div class="col-lg-8 col-xl-7 col-xxl-6">
+                    <div class="my-5 text-center text-xl-start">
+                        <h1 class="display-5 fw-bolder text-white mb-2">디지털 마케팅의 미래에 오신 것을 환영합니다!</h1>
+                        <p class="lead fw-normal text-white-50 mb-4">
+                            마케팅 자동화 솔루션을 구현하면 마케팅 효율성을 크게 향상시킬 수 있습니다.<br>
+                            선택의 미로를 통해 비즈니스 목표에 완벽하게 일치하는 솔루션을 맞춤화하여 지속 가능한 성장과 성공을 주도하면서 비즈니스의 잠재력을 최대한 활용하십시오.</p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">구매신청</a>
+                            <a class="btn btn-outline-light btn-lg px-4" href="#!">데모영상</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="/images/main_Image.jpg" alt="..." /></div>
+            </div>
+        </div>
+    </header>
+    <!-- Blog preview section-->
+    <section class="py-5">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="text-center">
+                        <h2 class="fw-bolder">프로그램 목록</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-5">
+                {{#posts}}
+                    <div class="col-lg-4 mb-5">
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-body p-4">
+                                <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
+                                <a class="text-decoration-none link-dark stretched-link" href="/posts/update/{{id}}"><h5 class="card-title mb-3">{{title}}</h5></a>
+                                <p class="card-text mb-0">{{content}}</p>
+                            </div>
+                            <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                <div class="d-flex align-items-end justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                                        <div class="small me-3">
+                                            <div class="fw-bold">글쓴이</div>
+                                            <div class="text-muted">{{author}}</div>
+                                        </div>
+                                        <div class="small me-3">
+                                            <div class="fw-bold">작성일자</div>
+                                            <div class="text-muted">{{modifiedDate}}</div>
+                                        </div>
+                                        <div class="small me-3">
+                                            <div class="fw-bold">조회수</div>
+                                            <div class="text-muted">{{cnt}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/posts}}
+            </div>
+        </div>
+    </section>
+</main>
 {{>layout/footer}}

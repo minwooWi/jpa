@@ -9,7 +9,6 @@ import xyz.kbootcamp.config.auth.LoginUser;
 import xyz.kbootcamp.config.auth.dto.SessionUser;
 import xyz.kbootcamp.service.posts.PostsService;
 import xyz.kbootcamp.web.dto.PostsResponseDto;
-import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
 @Controller
