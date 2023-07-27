@@ -1,0 +1,29 @@
+<div id="popup-modal-container" class="popup-modal unstaged">
+    <div class="popup-modal-overlay">
+    </div>
+    <div class="popup-modal-contents">
+        <div class="popup-modal-text">logo area</div>
+        <div class="popup-modal-text">Log into your account</div>
+        <div class="popup-modal-text">Continue with google</div>
+        <div class="popup-modal-text">Previously signed in with</div>
+        <div class="popup-modal-text">Continue with naver</div>
+        <a id="popup-modal-close" class="popup-modal-close">X</a>
+    </div>
+</div>
+<script>
+    //open modal
+    document.getElementById('modal-open').addEventListener("click", function(e){
+        document.getElementById('popup-modal-container').classList.toggle('opaque');
+        document.getElementById('popup-modal-container').classList.toggle('unstaged');
+    });
+
+    //close modal
+    document.getElementById('popup-modal-close').addEventListener("click", function(e){
+        document.getElementById('popup-modal-container').classList.toggle('opaque');
+
+        document.getElementById('popup-modal-container').addEventListener('transitionend', function(e){
+            this.classList.toggle('unstaged');
+            this.removeEventListener('transitionend',arguments.callee);
+        });
+    });
+</script>

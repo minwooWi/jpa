@@ -1,24 +1,4 @@
 {{>layout/header}}
-<main class="flex-shrink-0">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container px-5">
-            <a class="navbar-brand" href="/">Marketing Automation</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.mustache">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">공지사항</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">질문답변</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">구매신청</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html">프로그램</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html">다운로드</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html">로그인</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html">회원가입</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <!-- Header-->
     <header class="bg-dark py-5">
         <div class="container px-5">
@@ -80,8 +60,12 @@
                         </div>
                     </div>
                 {{/posts}}
+                {{^posts}}
+                    <div class="text-center">작성된 글이 존재 하지 않습니다.</div>
+                {{/posts}}
             </div>
         </div>
     </section>
 </main>
 {{>layout/footer}}
+{{>layout/modal}}
